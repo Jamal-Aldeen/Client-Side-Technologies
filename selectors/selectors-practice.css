@@ -1,0 +1,73 @@
+* {
+    font-family: Arial, sans-serif;
+}
+
+
+h1 {
+    color: blue;
+}
+
+
+p.intro {
+    background-color: lightyellow;
+}
+
+
+#container {
+    border: 2px solid black;
+}
+
+
+ul,
+footer {
+    margin-top: 20px;
+}
+
+
+ul li {
+    font-size: 18px;
+}
+
+p.intro{ 
+    color: #000;
+    
+ 
+}
+
+#container>p.intro_highlight {
+    color: green;
+}
+
+
+.box+a {
+    font-weight: bold;
+}
+
+
+#container a {
+    text-decoration: underline dashed;
+}
+
+
+a[id="special-link"] {
+    color: purple;
+}
+
+
+a:hover {
+    background-color: lightblue;
+}
+
+ul li:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+
+span.note::before {
+    content: "NOTE: ";
+    font-weight: bold;
+}
+
+.special::after {
+    content: " (special)";
+}

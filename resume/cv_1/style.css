@@ -1,0 +1,144 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 5px solid #ccc;
+    background-color: #f9f9f9;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    background-color: #000000c2;
+    color: #fff;
+    padding: 20px;
+    font-size: small;
+  }
+  
+  .profile-picture img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    display: block;
+    margin: 1rem auto;
+    object-fit: cover;
+  }
+  #online-info p{
+    width: 1px;
+    height: 1px;
+  
+    object-fit: cover;
+  }
+  
+  .title {
+    margin-left: 20px;
+  }
+  
+  .title h1 {
+    margin: 0;
+  }
+  
+  .title h2 {
+    margin: 5px 0 10px 0;
+  }
+  
+  .main-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .left-column,
+  .right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  h3 {
+    margin-bottom: 10px;
+    color: #ff7800;
+  }
+  
+  .contact p,
+  .languages p,
+  .skills-circles,
+  .online-info p {
+    margin: 5px 0;
+  }
+  
+  .bar {
+    display: inline-block;
+    width: 100px;
+    height: 10px;
+    background: #ddd;
+    margin-left: 10px;
+    border-radius: 5px;
+    position: relative;
+  }
+  
+  .level {
+    height: 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .english {
+    width: 80%;
+    background: #ffa500;
+  }
+  
+  .german {
+    width: 60%;
+    background: #4caf50;
+  }
+  
+  .spanish {
+    width: 40%;
+    background: #f44336;
+  }
+  
+  .skills-circles {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .circle {
+    width: 80px;
+    height: 80px;
+    position: relative;
+  }
+  
+  .progress {
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(#ffa500 calc(var(--progress) * 1%), #ddd calc(var(--progress) * 1%));
+    border-radius: 500%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .progress span {
+    background: #fff;
+    padding: 5px;
+    border-radius: 50%;
+  }
