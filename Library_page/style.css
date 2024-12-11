@@ -1,0 +1,232 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: medium;
+    font-weight: bold;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* header.scrolled {
+    background-color: rgba(0, 0, 0, 0.8); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.233);
+} */
+
+
+/* @media (min-width: 769px) {
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+    }
+} */
+
+/* Navbar Styles */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    transition: transform 0.3s ease;
+}
+
+nav ul li {
+    display: inline;
+  
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 16px; 
+    border-radius: 5px; 
+    transition: background-color 0.10s ease, transform 0.3s ease; /* إضافة تأثير عند التمرير */
+}
+
+
+
+nav a:hover {
+    background-color: #55555552;
+    transform: scale(1.4);
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .auth-buttons {
+        display: none; 
+    }
+
+    .navbar-toggle {
+        display: block; 
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    nav ul {
+        display: none; 
+        flex-direction: column;
+        gap: 15px;
+        padding-top: 10px;
+    }
+
+    nav ul.active {
+        display: flex; 
+    }
+
+    nav a {
+        padding: 12px 20px;
+    }
+}
+
+@media (min-width: 769px) {
+    .navbar-toggle {
+        display: none; /* Hide hamburger button on large screens */
+    }
+
+    nav ul {
+        display: flex; /* Show navbar on large screens */
+    }
+}
+
+/* Auth Buttons */
+.auth-buttons {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    display: flex;
+    gap: 20px;
+    
+}
+
+.auth-buttons a {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .auth-buttons {
+        position: static;
+        margin-top: 10px;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .auth-buttons a {
+        padding: 10px 20px;
+        background-color: red;
+        border-radius: 5px;
+    }
+}
+
+/* Box for Login/Sign Up */
+.auth-box {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.auth-box h2 {
+    margin-bottom: 20px;
+}
+
+.auth-box input[type="text"],
+.auth-box input[type="email"],
+.auth-box input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.auth-box input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.auth-box input[type="submit"]:hover {
+    background-color: #555;
+}
+
+.blocks {
+    display: flex;
+    justify-content: space-around;
+    align-items: center ;
+    height: 100vh;
+    gap: 30px;
+    margin: 20px;
+}
+
+.block {
+    text-align: center;
+    width: 30%;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+.block:hover {
+    transform: scale(1.05);
+}
+
+.block img {
+    width: 48%;
+    height: 200px;
+    object-fit:fill;
+    margin: 10px 0; 
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .blocks {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .block {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .auth-box {
+        width: 80%;
+    }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>libaray Website</title>
+    <link rel="icon" type="image/x-icon" href="/image/libaray_icon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="navbar-toggle" onclick="toggleMenu()">&#9776;</div>
+            <ul id="navbar-list">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="things-to-do.html" class="nav-link">Things to do</a></li>
+                <li><a href="contacts.html" class="nav-link">Contacts</a></li>
+                <li><a href="news.html" class="nav-link">News</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html" class="button">Login</a>
+                <a href="signup.html" class="button">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="blocks">
+            <div class="block">
+                <h2>Block One</h2>
+                <img src="/image/HTML5.png" alt="html">
+                <img src="/image/css.png" alt="css">
+            </div>
+            <div class="block">
+                <h2>Block Two</h2>
+                <img src="/image/php.png" alt="php">
+                <img src="/image/js.png" alt="js">
+            </div>
+            <div class="block">
+                <h2>Block Three</h2>
+                <img src="/image/React.png" alt="react">
+                <img src="/image/angular.png" alt="angular">
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            const navbarList = document.getElementById('navbar-list');
+            navbarList.classList.toggle('active');
+        }
+
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 0) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
