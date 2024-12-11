@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+// Part 1: Array Basics
+
+    // 1. Create an Array
+    var numbers = [10, 20, 30, 40, 50];
+    console.log(numbers);
+    console.log(numbers[0]);
+    console.log(numbers[numbers.length - 1]);
+    
+    // 2. Modify an Array
+    numbers.push(60);
+    numbers.shift();
+    console.log(numbers);
+    
+    // 3. Iterate Through an Array
+    function printArray(arr) {
+      for (var i = 0; i < arr.length; i++) {
+        console.log(arr[i]);
+      }
+    }
+    printArray(numbers);
+    
+    // Part 2: Functions with Arrays
+    
+    // 4. Find the Maximum Number
+    function findMax(arr) {
+      var max = arr[0];
+      for (var i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+          max = arr[i];
+        }
+      }
+      return max;
+    }
+    console.log(findMax([10, 50, 40, 30, 20]));
+    
+    // 5. Sum All Numbers
+    function sumArray(arr) {
+      var sum = 0;
+      for (var i = 0; i < arr.length; i++) {
+        sum += arr[i];
+      }
+      return sum;
+    }
+    console.log(sumArray([10, 20, 30, 40, 50]));
+    
+    // 6. Filter Even Numbers
+    function filterEven(arr) {
+      var evenNumbers = [];
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+          evenNumbers.push(arr[i]);
+        }
+      }
+      return evenNumbers;
+    }
+    console.log(filterEven([10, 15, 20, 25, 30]));
+    
+    // Part 3: Advanced Array Operations
+    
+    // 7. Count Numbers Greater Than 25
+    function countGreaterThan25(arr) {
+      var count = 0;
+      var numbersGreaterThan25 = [];
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] > 25) {
+          count++;
+          numbersGreaterThan25.push(arr[i]);
+        }
+      }
+      console.log("Numbers greater than 25:", numbersGreaterThan25);
+      return count;
+    }
+    console.log(countGreaterThan25([10, 20, 30, 40, 50]));
+    
+    // Part 4: Challenge Tasks
+    
+    // 8. Remove Duplicates
+    function removeDuplicates(arr) {
+      var uniqueArray = [];
+      for (var i = 0; i < arr.length; i++) {
+        var isDuplicate = false;
+        for (var j = 0; j < uniqueArray.length; j++) {
+          if (arr[i] === uniqueArray[j]) {
+            isDuplicate = true;
+            break;
+          }
+        }
+        if (!isDuplicate) {
+          uniqueArray.push(arr[i]);
+        }
+      }
+      return uniqueArray;
+    }
+    console.log(removeDuplicates([1, 2, 2, 3, 3, 4]));
+    </script>
+</html>

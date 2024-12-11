@@ -101,6 +101,30 @@ body {
 }
 
 /* Updated Navbar Styling */
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  transition: transform 0.3s ease;
+}
+
+.navbar ul li {
+  display: inline;
+
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  displxay: inline-block;
+  font-size: 16px; 
+  border-radius: 5px; 
+  transition: background-color 0.10s ease, transform 0.3s ease; /* إضافة تأثير عند التمرير */
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -118,6 +142,7 @@ body {
 
 .navbar-menu a {
   color: black;
+  flex-grow: 100%;
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: bold;
@@ -136,10 +161,29 @@ body {
   border-radius: 5px;
 }
 
-.navbar-button {
-  margin-left: auto;
+#red {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  display: flex;
+  gap: 20px;
+  
+  
 }
 
+.navbar  a {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+#red a{
+
+  background-color: red;
+  color: white;
+
+}
 .navbar-button button {
   background-color: #e31837;
   color: white;
