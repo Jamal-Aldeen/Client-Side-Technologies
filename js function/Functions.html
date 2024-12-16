@@ -87,21 +87,16 @@
     
     // 8. Remove Duplicates
     function removeDuplicates(arr) {
-      var uniqueArray = [];
-      for (var i = 0; i < arr.length; i++) {
-        var isDuplicate = false;
-        for (var j = 0; j < uniqueArray.length; j++) {
-          if (arr[i] === uniqueArray[j]) {
-            isDuplicate = true;
-            break;
-          }
+    var uniqueArray = [];  
+    for (var i = 0; i < arr.length; i++) {
+        if (uniqueArray.indexOf(arr[i]) === -1) {
+            uniqueArray.push(arr[i]);  
         }
-        if (!isDuplicate) {
-          uniqueArray.push(arr[i]);
-        }
-      }
-      return uniqueArray;
     }
-    console.log(removeDuplicates([1, 2, 2, 3, 3, 4]));
+    
+    return uniqueArray;
+}
+
+console.log(removeDuplicates([1, 2, 2, 3, 3, 4]));
     </script>
 </html>
