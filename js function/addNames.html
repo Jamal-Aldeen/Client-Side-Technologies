@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>addNames</title>
+</head>
+<body>
+<script>
+    var nameList = []
+    function addName(name) {
+        nameList.push(name)
+        displayNames()
+    }
+    
+    function updateNames(index, newName) {
+        if (index >= 0 && index < nameList.length) {
+            nameList[index] = newName  
+            displayNames()
+        } else {
+            console.log('Invalid index')
+        }
+    }
+
+    function removeName(index) {
+        if (index >= 0 && index < nameList.length) {
+            nameList.splice(index, 1)
+            displayNames()
+        } else {
+            console.log('Invalid index')
+        }
+    }
+
+    function displayNames() {
+        if (nameList.length == 0) {
+            console.log('No names available')
+        } else {
+            for (var i = 0; i < nameList.length; i++) {
+                console.log((i+1) + " " + nameList[i])
+            }
+        }
+    }
+</script>
+</body>
+</html>
