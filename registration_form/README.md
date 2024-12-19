@@ -29,29 +29,14 @@ A fully responsive and interactive registration form with client-side validation
 ## Preview
 
 
-(Screenshot_2.jpeg)
+![Preview](Screenshot_2.jpeg)
 
 
 
-(Screenshot_1.jpeg)
-
----
-
-## How to Run
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-repo/registration-form.git
-   ```
-
-2. Navigate to the project directory:
-   ```bash
-   cd registration-form
-   ```
-
-3. Open `index.html` in your browser to view the form.
+![Preview](Screenshot_1.jpeg)
 
 ---
+
 
 ## Validation Rules
 
