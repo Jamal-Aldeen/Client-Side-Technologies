@@ -28,13 +28,12 @@ A fully responsive and interactive registration form with client-side validation
 
 ## Preview
 
-### Desktop View:
 
-![Desktop View](Screenshot_2.jpeg)
+(Screenshot_2.jpeg)
 
-### Mobile View:
 
-![Mobile View](Screenshot_1.jpeg)
+
+(Screenshot_1.jpeg)
 
 ---
 
