@@ -12,7 +12,7 @@ document.getElementById('registrationForm').addEventListener('submit', function 
     
     var usernameRegex = /^[a-zA-Z]{5,20}$/;
     var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    var passwordRegex = /^(?=.*[A-Z]).{1,8}$/;
+    var passwordRegex = /^(?=.*[A-Z]).{8}$/;
     var phoneRegex = /^(010|011|012|015)\d{8}$/;
 
     var errorMessages = document.querySelectorAll('.error');
@@ -31,7 +31,7 @@ document.getElementById('registrationForm').addEventListener('submit', function 
     }
 
     if (!passwordRegex.test(password.value)) {
-        document.getElementById('passwordError').textContent = 'Password must be a maximum of 8 characters and include at least one uppercase letter.';
+        document.getElementById('passwordError').textContent = 'Password must be a 8 characters and include at least one uppercase letter.';
         document.getElementById('passwordError').style.display = 'block';
         valid = false;
     }
