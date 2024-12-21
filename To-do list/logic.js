@@ -108,7 +108,7 @@ function markComplete(checkbox, id) {
 
 function updateCounter() {
     var counter = document.getElementById("completed-counter");
-    counter.textContent = "Completed Tasks: " + completedCount;
+    counter.textContent = "Task Completed Today: " + completedCount;
 }
 
 
