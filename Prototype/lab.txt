@@ -1,0 +1,82 @@
+1. Basic Understanding of Prototype
+Question:
+Create an object person with a property name and a method greet() that logs a greeting message including the name. Then, create another object student that inherits from person and adds a new property grade.
+Test the student object to call the greet() method and display the grade.
+
+2. Exploring Object.create()
+Question:
+Using Object.create(), create a prototype chain where:
+
+The base object animal has a method speak() that logs "This animal makes a sound.".
+Create a new object dog that inherits from animal and overrides the speak() method to log "The dog barks.".
+Demonstrate how to call both the animal's and dog's versions of speak() from the dog object.
+
+3. Adding Methods to Prototypes
+Question:
+Define a constructor function Car with properties brand and year. Add a method getAge() to the prototype of Car that calculates the car's age based on the current year.
+Create an instance of Car and call the getAge() method.
+
+4. Checking Prototype Relationships
+Question:
+Given the following code:
+
+function Gadget(name) {
+  this.name = name;
+}
+Gadget.prototype.use = function () {
+  console.log(this.name + " is now in use.");
+};
+
+var phone = new Gadget("Smartphone");
+Verify if phone is an instance of Gadget.
+Check if phone has access to the use() method through the prototype chain.
+Log the prototype of the phone object using JavaScript.
+
+5. Overriding Inherited Properties
+Question:
+Create an object shape with a property type set to "generic".
+Create another object circle that inherits from shape and overrides the type property to "circle". Add a method describe() to shape that logs "This is a generic shape.", and override it in circle to log "This is a circle.".
+Call describe() from both objects and verify the outputs.
+
+6. Prototype vs Own Properties
+Question:
+Using the following code:
+
+function User(username) {
+  this.username = username;
+}
+User.prototype.role = "guest";
+
+var user1 = new User("john_doe");
+Check if role is an own property of user1.
+Add a new property email directly to user1.
+Iterate over all properties of user1 using a for...in loop, distinguishing between own properties and inherited properties.
+
+7. Prototype Chain Debugging
+Question:
+Given the following prototype chain:
+
+var baseObject = { a: 10 };
+var middleObject = Object.create(baseObject);
+middleObject.b = 20;
+
+var finalObject = Object.create(middleObject);
+finalObject.c = 30;
+Log the values of a, b, and c from finalObject.
+Verify if finalObject has a as an own property.
+Modify the value of a in baseObject and check how it affects finalObject.
+
+8. Prototype Pollution
+Question:
+Write a small script to demonstrate how modifying a prototype can unintentionally affect all objects that inherit from it. For example:
+
+Create an object book with a prototype property genre.
+Add a new property to book's prototype and demonstrate how it impacts all instances created earlier.
+
+9. Real-Life Application of Prototypes
+Question:
+Imagine you are building a library management system.
+
+Create a constructor function Library with properties name and location.
+Add a method addBook() to its prototype that takes a book name and stores it in a books array.
+Create a new library instance, add some books, and log the books list.

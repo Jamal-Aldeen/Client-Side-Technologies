@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            font-size: 100px;
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Prototype </p>
+    <script>
+        // Task 1: Basic Understanding of Prototype
+        console.log("Task 1: Basic Understanding of Prototype");
+        var person = {
+            name: "John",
+            greet: function () {
+                console.log("Hello, my name is " + this.name + ".");
+            }
+        };
+        var student = Object.create(person);
+        student.grade = "A";
+        student.name = "Jamal";
+        student.greet();
+        console.log("Grade:", student.grade);
+        console.log("\n");
+
+        // Task 2: Exploring Object.create()
+        console.log("Task 2: Exploring Object.create()");
+        var animal = {
+            speak: function () {
+                console.log("This animal makes a sound.");
+            }
+        };
+        var dog = Object.create(animal);
+        dog.speak = function () {
+            console.log("The dog barks.");
+        };
+        dog.speak();
+        animal.speak.call(dog);
+        console.log("\n");
+
+        // Task 3: Adding Methods to Prototypes
+        console.log("Task 3: Adding Methods to Prototypes");
+        function Car(brand, year) {
+            this.brand = brand;
+            this.year = year;
+        }
+        Car.prototype.getAge = function () {
+            var currentYear = new Date().getFullYear();
+            return currentYear - this.year;
+        };
+        var myCar = new Car("Toyota", 2015);
+        console.log("Car Age:", myCar.getAge());
+        console.log("\n");
+
+        // Task 4: Checking Prototype Relationships
+        console.log("Task 4: Checking Prototype Relationships");
+        function Gadget(name) {
+            this.name = name;
+        }
+        Gadget.prototype.use = function () {
+            console.log(this.name + " is now in use.");
+        };
+        var phone = new Gadget("Smartphone");
+        console.log(phone instanceof Gadget);
+        phone.use();
+        console.log(Object.getPrototypeOf(phone));
+        console.log("\n");
+
+        // Task 5: Overriding Inherited Properties
+        console.log("Task 5: Overriding Inherited Properties");
+        var shape = {
+            type: "generic",
+            describe: function () {
+                console.log("This is a generic shape.");
+            }
+        };
+        var circle = Object.create(shape);
+        circle.type = "circle";
+        circle.describe = function () {
+            console.log("This is a circle.");
+        };
+        shape.describe();
+        circle.describe();
+        console.log("\n");
+
+        // Task 6: Prototype vs Own Properties
+        console.log("Task 6: Prototype vs Own Properties");
+        function User(username) {
+            this.username = username;
+        }
+        User.prototype.role = "guest";
+        var user1 = new User("john_doe");
+        console.log(user1.hasOwnProperty("role"));
+        user1.email = "john@example.com";
+        for (var prop in user1) {
+            if (user1.hasOwnProperty(prop)) {
+                console.log("Own property:", prop);
+            } else {
+                console.log("Inherited property:", prop);
+            }
+        }
+        console.log("\n");
+
+        // Task 7: Prototype Chain Debugging
+        console.log("Task 7: Prototype Chain Debugging");
+        var baseObject = { a: 10 };
+        var middleObject = Object.create(baseObject);
+        middleObject.b = 20;
+        var finalObject = Object.create(middleObject);
+        finalObject.c = 30;
+        console.log("a:", finalObject.a);
+        console.log("b:", finalObject.b);
+        console.log("c:", finalObject.c);
+        console.log(finalObject.hasOwnProperty("a"));
+        baseObject.a = 50;
+        console.log("Updated a:", finalObject.a);
+        console.log("\n");
+
+        // Task 8: Prototype Pollution
+        console.log("Task 8: Prototype Pollution");
+        var book = {
+            genre: "Fiction"
+        };
+        Object.prototype.newProperty = "Shared";
+        var myBook = Object.create(book);
+        var anotherBook = Object.create(book);
+        console.log(myBook.newProperty);
+        console.log(anotherBook.newProperty);
+        console.log("\n");
+
+        // Task 9: Real-Life Application of Prototypes
+        console.log("Task 9: Real-Life Application of Prototypes");
+        function Library(name, location) {
+            this.name = name;
+            this.location = location;
+            this.books = [];
+        }
+        Library.prototype.addBook = function (bookName) {
+            this.books.push(bookName);
+        };
+        var myLibrary = new Library("City Library", "Downtown");
+        myLibrary.addBook("1984");
+        myLibrary.addBook("To Kill a Mockingbird");
+        console.log("Books in library:", myLibrary.books);
+
+
+
+    </script>
+</body>
+
+</html>
