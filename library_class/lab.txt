@@ -1,0 +1,58 @@
+You will create a simple library management system that allows users to:
+
+1- Add books to the library.
+2- Borrow books from the library.
+3- Return books to the library.
+4- List available books.
+
+The system will consist of two modules:
+
+Book.js - Contains the definition of the Book class.
+
+Library.js - Contains the definition of the Library class and implements the core functionality.
+
+Finally, you'll use an entry point file, app.js, to bring everything together.
+
+
+
+1. Create the Book.js Module
+
+Define a Book class in this module with the following:
+
+a- Properties:
+title (string)
+author (string)
+isAvailable (boolean, default is true)
+
+b- Methods:
+borrow() - Sets isAvailable to false.
+returnBook() - Sets isAvailable to true.
+Export the Book class from the module.
+
+2. Create the Library.js Module
+
+Define a Library class in this module with the following:
+
+a- Properties:
+name (string)
+books (array to store Book objects)
+
+b- Methods:
+addBook(book) - Adds a Book object to the books array.
+listAvailableBooks() - Logs the titles and authors of all available books.
+borrowBook(title) - Finds the book by title and marks it as borrowed if available; otherwise, logs that the book is not available.
+returnBook(title) - Finds the book by title and marks it as returned if it's currently borrowed; otherwise, logs that the book is not borrowed.
+Export the Library class from the module.
+
+
+3. Create the Entry Point app.js
+Import the Book and Library classes.
+Create a library object, e.g., const myLibrary = new Library('City Library');
+Add some books to the library using the addBook method.
+
+Test the functionality:
+a- List all available books.
+b- Borrow a book.
+c- Attempt to borrow a book that is already borrowed.
+d- Return a book.
+e- Attempt to return a book that wasn't borrowed.
