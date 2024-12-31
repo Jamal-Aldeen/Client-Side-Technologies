@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Matching Game</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Memory Matching Game</h1>
+    <div class="controls">
+      <button id="start-game">Start Game</button>
+      <button id="restart-game">Restart Game</button>
+      <select id="difficulty">
+        <option value="4x4">Easy (4x4)</option>
+        <option value="6x6">Medium (6x6)</option>
+        <option value="8x8">Hard (8x8)</option>
+      </select>
+      <select id="theme">
+        <option value="animals">Animals</option>
+        <option value="fruits">Fruits</option>
+        <option value="numbers">Numbers</option>
+      </select>
+    </div>
+    <div class="stats">
+      <span id="move-counter">Moves: 0</span>
+      <span id="timer">Time: 0:00</span>
+    </div>
+  </header>
+  <main>
+    <div class="game-board"></div>
+  </main>
+  <footer>
+    <p>&copy; 2024 Memory Matching Game</p>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
