@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const loadProducts = () => {
-        productList.innerHTML = ''; // Clear existing products
-        loadingSpinner.style.display = 'block'; // Show loading spinner
+        productList.innerHTML = ''; 
+        loadingSpinner.style.display = 'block'; 
         fetch('https://fakestoreapi.com/products')
             .then(response => {
                 if (!response.ok) {
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>`;
             })
             .finally(() => {
-                loadingSpinner.style.display = 'none'; // Hide loading spinner
+                loadingSpinner.style.display = 'none'; 
             });
     };
 
