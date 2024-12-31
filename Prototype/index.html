@@ -35,12 +35,12 @@
 
         // Task 2: Exploring Object.create()
         console.log("Task 2: Exploring Object.create()");
-        var animal = {
+        let animal = {
             speak: function () {
                 console.log("This animal makes a sound.");
             }
         };
-        var dog = Object.create(animal);
+        let dog = Object.create(animal);
         dog.speak = function () {
             console.log("The dog barks.");
         };

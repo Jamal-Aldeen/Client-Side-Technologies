@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            font-size: 100px;
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Task of day12</p>
+</body>
+<script>
+
+// Task 1: filterAndTransform Function
+const filterAndTransform = (numbers, filterFn, transformFn) => {
+
+    const filtered = numbers.filter(filterFn);
+    const transformed = filtered.map(transformFn);
+
+    return transformed;
+};
+
+// Task 2: Swap Variables Using Array Destructuring
+const swapVariables = (a, b) => {
+
+    [a, b] = [b, a];
+    return [a, b];
+};
+
+// Task 3: Flatten an Array of Arrays Using the Spread Operator
+const flattenArray = (nested) => {
+
+    return [].concat(...nested);
+};
+
+// Task 1
+const numbers = [1, 2, 3, 4, 5];
+const isEven = (n) => n % 2 === 0; 
+const multiplyByTwo = (n) => n * 2; 
+const transformedNumbers = filterAndTransform(numbers, isEven, multiplyByTwo);
+console.log('Task 1 Output:', transformedNumbers); 
+
+// Task 2 Output
+let x = 5;
+let y = 10;
+[x, y] = swapVariables(x, y);
+console.log('Task 2 Output:', x, y);
+
+// Task 3
+const nested = [[1, 2], [3, 4], [5]];
+const flattened = flattenArray(nested);
+console.log('Task 3 Output:', flattened); 
+
+    </script>
+</html>

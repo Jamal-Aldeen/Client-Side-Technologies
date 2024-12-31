@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <style>
+        p {
+            font-size: 100px;
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <p> Library Management System</p>
+    <p>This is a simple system to manage books. Open the console to interact with the system.</p>
+
+
+    <script type="module" src="app.js"></script>
+    <script type="module" src="Library.js"></script>
+    <script type="module" src="Book.js"></script>
+
+
+</body>
+
+</html>import { Book } from './Book.js';
+import { Library } from './Library.js';
+
+const myLibrary = new Library('City Library');
+
+const book1 = new Book('Red', 'C.Color');
+console.log(book1);
+
+const book2 = new Book('Bule', 'C.Color');
+const book3 = new Book('Green', 'C.Color');
+
+myLibrary.addBook(book1);
+myLibrary.addBook(book2);
+myLibrary.addBook(book3);
+
+
+myLibrary.listAvailableBooks();  
+
+myLibrary.borrowBook('Red');
+myLibrary.borrowBook('Green');
+
+myLibrary.borrowBook('Red');
+
+myLibrary.listAvailableBooks();
+
+myLibrary.returnBook('Red');
+
+myLibrary.returnBook('Blue');
+
+myLibrary.listAvailableBooks();
+export class Book {
+    constructor(title, author) {
+      this.title = title;
+      this.author = author;
+      this.isAvailable = true; 
+    }
+  
+
+    borrow() {
+      if (this.isAvailable) {
+        this.isAvailable = false;
+      } else {
+        console.log(`${this.title} by ${this.author} is already borrowed.`);
+      }
+    }
+  
+ 
+    returnBook() {
+      if (!this.isAvailable) {
+        this.isAvailable = true;
+      } else {
+        console.log(`${this.title} by ${this.author} was not borrowed.`);
+      }
+    }
+  }
+  import { Book } from './Book.js';
+
+export class Library {
+  constructor(name) {
+    this.name = name;
+    this.books = []; 
+  }
+
+  addBook(book) {
+    this.books.push(book);
+  }
+
+
+  listAvailableBooks() {
+    const availableBooks = this.books.filter(book => book.isAvailable);
+    if (availableBooks.length === 0) {
+      console.log('No available books at the moment.');
+    } else {
+      console.log('Available books:');
+      availableBooks.forEach(book => {
+        console.log(`${book.title} by ${book.author}`);
+      });
+    }
+  }
+
+
+  borrowBook(title) {
+    const book = this.books.find(book => book.title === title);
+    if (book) {
+      if (book.isAvailable) {
+        book.borrow();
+        console.log(`${book.title} has been borrowed.`);
+      } else {
+        console.log(`${book.title} is not available.`);
+      }
+    } else {
+      console.log(`Book titled ${title} not found in the library.`);
+    }
+  }
+
+  returnBook(title) {
+    const book = this.books.find(book => book.title === title);
+    if (book) {
+      if (!book.isAvailable) {
+        book.returnBook();
+        console.log(`${book.title} has been returned.`);
+      } else {
+        console.log(`${book.title} was not borrowed.`);
+      }
+    } else {
+      console.log(`Book titled ${title} not found in the library.`);
+    }
+  }
+}

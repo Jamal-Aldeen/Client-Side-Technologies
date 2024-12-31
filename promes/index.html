@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Store Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#" id="home-link">Home</a></li>
+            <li><a href="#" id="products-link">Products</a></li>
+            <li><a href="#" id="contact-link">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div id="content">
+        <div id="home">
+            <img src="/banner.5e0ee8a6_JMozV.webp" alt="Store Image" id="home-image">
+            <h1>Welcome to Fake Store</h1>
+            <p>Explore our wide range of products!</p>
+            <button id="view-products">View Products</button>
+        </div>
+        
+
+        <div id="products" style="display: none;">
+            <h1>Products</h1>
+            <div id="loading-spinner" style="display: none;">
+                <p>Loading...</p>
+            </div>
+            <div id="product-list"></div>
+        </div>
+        
+
+        <div id="contact" style="display: none;">
+            <h1>Contact Us</h1>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Your message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <p id="form-response" style="display: none;">Thank you for contacting us! We'll get back to you soon.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
