@@ -1,6 +1,3 @@
-Here's a simple `README.md` file for the start of your project:
-
-```markdown
 # Memory Adventure
 
 A fun and interactive memory game to challenge your brain!
@@ -35,8 +32,3 @@ MemoryAdventure/
 - JavaScript
 
 ---
-
-Stay tuned for updates and additional features!
-```
-
-This template is clean, beginner-friendly, and contains just the essentials to get started.
